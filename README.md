@@ -2,7 +2,7 @@ Date Range Picker
 ===================
 Date Range Picker is a Calender Picker View to show a Customized Date Range Picker with improved UI
 
-[ ![Download](https://api.bintray.com/packages/savvisingh/maven/RangeDatePicker/images/download.svg) ](https://bintray.com/savvisingh/maven/RangeDatePicker/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/savvisingh/maven/date-range-picker/images/download.svg) ](https://bintray.com/savvisingh/maven/date-range-picker/_latestVersion)
 
 Screenshots
 -----------
@@ -80,7 +80,7 @@ declare it into your pom.xml
 
 ```xml
 <dependency>
-  <groupId>com.savvi.rangepicker</groupId>
+  <groupId>com.savvi.datepicker</groupId>
   <artifactId>rangepicker</artifactId>
   <version>1.0.1</version>
   <type>pom</type>
@@ -90,6 +90,6 @@ or into your build.gradle
 
 ```groovy
 dependencies {
-    compile 'com.savvi.rangepicker:rangepicker:1.0.1'
+    compile 'com.savvi.datepicker:rangepicker:1.0.1'
 }
 ```
