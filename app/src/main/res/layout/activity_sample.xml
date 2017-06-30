@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.savvi.rangepickersample.SampleActivity">
+
+    <com.savvi.rangepicker.CalendarPickerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/calendar_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:clipToPadding="false"
+        app:tsquare_dividerColor="@color/transparent"
+        app:tsquare_headerTextColor="@color/custom_header_text"
+        />
+
+</android.support.constraint.ConstraintLayout>
