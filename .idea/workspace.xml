@@ -10,43 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3053627-55ef-42a2-9a94-f328786166f0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/build.gradle" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/proguard-rules.pro" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/androidTest/java/com/savvi/rangedatepicker/ExampleInstrumentedTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/AndroidManifest.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarCellDecorator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarCellView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarGridView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarPickerView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarRowView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/DayViewAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/DefaultDayViewAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/IndexedLinkedHashMap.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/Logr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/MonthCellDescriptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/MonthDescriptor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/MonthView.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/RangeState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_bg_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_text_selector.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/day_text_color.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_deactivated.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_first.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_middle.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_middle_unavailable.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_selected.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_unavailable.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/layout/month.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/layout/week.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/attrs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/colors.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/dimens.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/ids.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/strings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/values/styles.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/rangedatepicker/src/test/java/com/savvi/rangedatepicker/ExampleUnitTest.java" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Range.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-23-15-25-22-499.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/build/android-profile/profile-2017-06-23-15-25-22-499.rawproto" afterPath="" />
@@ -71,18 +34,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/range_picker/src/main/res/values/strings.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/range_picker/src/test/java/com/savvi/range_picker/ExampleUnitTest.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/rangepicker" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0-rc-1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0-rc-1/fileHashes/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0-rc-1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0-rc-1/fileHashes/fileHashes.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/taskHistory.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0-rc-1/taskHistory/taskHistory.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/gradle.xml" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -176,11 +127,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SampleActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SampleActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
+            <state relative-caret-position="860">
+              <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -191,8 +142,28 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
+            <state relative-caret-position="383">
               <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/rangedatepicker/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -5074,21 +5045,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="860">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
+        <state relative-caret-position="383">
           <caret line="30" column="3" lean-forward="false" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="15" lean-forward="false" selection-start-line="18" selection-start-column="15" selection-end-line="18" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="340">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangedatepicker/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
