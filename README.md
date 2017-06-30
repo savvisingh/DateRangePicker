@@ -44,7 +44,7 @@ calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 ```java
 ArrayList<Date> arrayList = new ArrayList<>();
 //add dates which you want to unavailable
-calendar.highlightDates(arrayList);
+calendar.makeUnavailable(arrayList);
 
  ``` 
  
