@@ -1,0 +1,24 @@
+<resources>
+  <color name="calendar_active_month_bg">#ffffff</color>
+  <color name="calendar_bg">#ffffff</color>
+  <color name="calendar_divider">#f5f5f5</color>
+  <color name="calendar_inactive_month_bg">#ffffff</color>
+  <color name="calendar_selected_day_bg">#ffcf40</color>
+  <color name="calendar_highlighted_day_bg">#ffcf40</color>
+  <color name="calendar_selected_range_bg">#ffcf40</color>
+  <color name="calendar_text_inactive">#ffffff</color>
+  <color name="calendar_text_active">#212121</color>
+  <color name="calendar_text_selected">#ffffff</color>
+  <color name="calendar_text_unselected">#7ffefeff</color>
+  <color name="calendar_text_highlighted">#f5f5f5</color>
+  <color name="colorAccent">#ffcf40</color>
+  <color name="color_red">#ef5350</color>
+  <color name="state_deactivated">#7ffefeff</color>
+  <color name="dateTimeRangePickerStateDefault">@android:color/black</color>
+  <color name="dateTimeRangePickerStateNonSelectable">@android:color/white</color>
+  <color name="dateTimeRangePickerStateToday">#ffcf40</color>
+  <color name="dateTimeRangePickerHeaderTextColor">@android:color/black</color>
+  <color name="dateTimeRangePickerTitleTextColor">@android:color/black</color>
+  <color name="dateTimeRangePickerRangeTextColorActive">@android:color/white</color>
+  <color name="dateTimeRangePickerRangeTextColorInactive">#B9B9B9</color>
+</resources>

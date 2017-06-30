@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2012 Square, Inc. -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:drawable="@drawable/state_range_middle" app:tsquare_state_range_middle="true" />
+  <item android:drawable="@drawable/state_selected" android:state_selected="true" app:tsquare_state_range_first="false"
+        app:tsquare_state_range_last="false" app:tsquare_state_highlighted = "false"/>
+  <item android:drawable="@drawable/state_range_first" app:tsquare_state_range_first="true" />
+  <item android:drawable="@drawable/state_range_last" app:tsquare_state_range_last="true" />
+   <item android:drawable="@drawable/state_unavailable" app:tsquare_state_highlighted = "true"/>
+  <item app:tsquare_state_current_month="false">
+    <shape android:shape="rectangle">
+      <solid android:color="@android:color/transparent" />
+    </shape>
+  </item>
+  <item android:drawable="@android:color/transparent" app:tsquare_state_today="true" app:tsquare_state_unavailable="false" />
+  <item android:drawable="@drawable/state_range_middle_unavailable" app:tsquare_state_unavailable="true"  />
+
+</selector>

@@ -115,6 +115,6 @@
     <orderEntry type="library" exported="" name="support-vector-drawable-25.4.0" level="project" />
     <orderEntry type="library" exported="" name="animated-vector-drawable-25.4.0" level="project" />
     <orderEntry type="library" exported="" name="support-compat-25.4.0" level="project" />
-    <orderEntry type="module" module-name="rangepicker" exported="" />
+    <orderEntry type="module" module-name="rangedatepicker" exported="" />
   </component>
 </module>

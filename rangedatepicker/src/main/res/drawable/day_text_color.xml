@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item android:color="@android:color/white" android:state_selected="true" app:tsquare_state_range_middle="false" />
+  <item android:color="@color/dateTimeRangePickerStateNonSelectable" app:tsquare_state_current_month="false" />
+  <item android:color="@color/dateTimeRangePickerStateNonSelectable" app:tsquare_state_range_middle="true" />
+  <item android:color="@color/dateTimeRangePickerStateToday" app:tsquare_state_today="true" app:tsquare_state_highlighted = "false" app:tsquare_state_unavailable = "false"/>
+  <item android:color="@color/dateTimeRangePickerStateNonSelectable"  app:tsquare_state_selectable="false" />
+    <item android:color="@color/dateTimeRangePickerStateNonSelectable" app:tsquare_state_highlighted = "true" />
+  <item android:color="@color/dateTimeRangePickerStateNonSelectable" app:tsquare_state_unavailable = "true" app:tsquare_state_today="false"/>
+  <item android:color="@color/dateTimeRangePickerStateNonSelectable" app:tsquare_state_unavailable = "true" app:tsquare_state_today="true" />
+  <item android:color="@color/dateTimeRangePickerRangeTextColorInactive" app:tsquare_state_deactivated="true" app:tsquare_state_today="false" android:state_selected="false"/>
+
+
+  <item android:color="@color/dateTimeRangePickerStateDefault" />
+</selector>
