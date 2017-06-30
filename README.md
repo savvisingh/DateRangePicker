@@ -2,6 +2,8 @@ Date Range Picker
 ===================
 Date Range Picker is a Calender Picker View to show a Customized Date Range Picker with improved UI
 
+[ ![Download](https://api.bintray.com/packages/savvisingh/maven/RangeDatePicker/images/download.svg) ](https://bintray.com/savvisingh/maven/RangeDatePicker/_latestVersion)
+
 Screenshots
 -----------
 <img src="device-2017-06-23-154706.png" alt="alt text" width="300" height="500"> <img src="device-2017-06-23-154757.png" alt="alt text" width="300" height="500">
