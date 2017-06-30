@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.savvi.rangepicker.CalendarPickerView;
+import com.savvi.rangedatepicker.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
