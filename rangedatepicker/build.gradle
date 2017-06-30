@@ -1,5 +1,35 @@
 apply plugin: 'com.android.library'
 
+//ext {
+//    bintrayRepo = 'maven'
+//    bintrayName = 'date-range-picker'
+//
+//    publishedGroupId = 'com.savvi.datepicker'
+//    libraryName = 'date-range-picker'
+//    artifact = 'date-range-picker'
+//
+//    libraryDescription = 'Date Range Picker is a Calender Picker View to show a Customized Date Range Picker with improved UI'
+//    siteUrl = 'https://github.com/savvisingh/DateRangePicker'
+//    gitUrl = 'https://github.com/savvisingh/DateRangePicker.git'
+//
+//    libraryVersion = '1.0.1'
+//
+//    developerId = 'savvisingh'
+//    developerName = 'Sarabjeet Singh'
+//    developerEmail = 'sabbispeak@gmail.com'
+//
+//    licenseName = 'The Apache Software License, Version 2.0'
+//    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//    allLicenses = ["Apache-2.0"]
+//}
+
+ext {
+    PUBLISH_GROUP_ID = 'com.savvi.datepicker'
+    PUBLISH_ARTIFACT_ID = 'rangepicker'
+    PUBLISH_VERSION = '1.0.1'
+}
+
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -31,3 +61,8 @@ dependencies {
     implementation 'com.android.support:appcompat-v7:25.4.0'
     testImplementation 'junit:junit:4.12'
 }
+
+apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
+
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+//apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
