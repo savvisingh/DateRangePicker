@@ -36,12 +36,9 @@ public class SampleActivity extends AppCompatActivity {
                 .withSelectedDate(new Date());
 
 
-
         SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
         String strdate = "22-06-2017";
         String strdate2 = "26-06-2017";
-
-
 
 
         try {
@@ -61,7 +58,7 @@ public class SampleActivity extends AppCompatActivity {
 
         calendar.deactivateDates(list);
 
-        Log.d("list",  calendar.getSelectedDates().toString());
+        Log.d("list", calendar.getSelectedDates().toString());
 
 
     }
