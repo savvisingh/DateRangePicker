@@ -40,19 +40,11 @@ calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
  
 ```
 
-* Adding Unavailable Dates
-  These dates will be shown in Red color and marked unavailable
-
-```java
-ArrayList<Date> arrayList = new ArrayList<>();
-//add dates which you want to unavailable
-calendar.makeUnavailable(arrayList);
-
- ``` 
- 
  * Adding Deactivated Dates
   User wont able to select these dates thwy will be deactivated.
-  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color
+  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color.
+  
+  **This is required**
 
 ```java
 ArrayList<Integer> list = new ArrayList<>();
@@ -64,8 +56,9 @@ calendar.deactivateDates(list);
  ``` 
  
  * Getting Selected Dates
-You can get selected dates with the below function call when your user click finish or next button(which will you implement)
-Dont forget to exclude Unavailable dates from the selected dates, its a bug so I will soon fix it.
+You can get selected dates with the below function call when your user click finish or next button (which will you implement).
+
+**Don't forget to exclude Unavailable dates from the selected dates, its a bug so I will soon fix it.**
 
 ```java
 
