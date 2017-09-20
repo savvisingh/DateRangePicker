@@ -13,7 +13,7 @@ Usage
 * 1. Add Calendar Picker View to XML
 
 ```xml
-<com.savvi.rangepicker.CalendarPickerView
+<com.savvi.rangedatepicker.CalendarPickerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendar_view"
