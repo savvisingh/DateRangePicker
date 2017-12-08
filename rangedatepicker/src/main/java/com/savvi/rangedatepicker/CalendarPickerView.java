@@ -287,7 +287,7 @@ public class CalendarPickerView extends ListView {
       }
       if (selectedDates != null) {
         for (Date date : selectedDates) {
-          //selectDate(date);
+          selectDate(date);
         }
       }
       scrollToSelectedDates();
