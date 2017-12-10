@@ -30,7 +30,7 @@ Usage
  ```
  
 * 2. Initialize it in Java Class
-There are other Selection modes also SINGLE and MULTIPLE
+        There are other Selection modes also SINGLE and MULTIPLE
 ```java
 calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 
