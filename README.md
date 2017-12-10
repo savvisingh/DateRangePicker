@@ -30,7 +30,7 @@ Usage
  ```
  
 * 2. Initialize it in Java Class
-        There are other Selection modes also SINGLE and MULTIPLE
+      
 ```java
 calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 
@@ -39,7 +39,7 @@ calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
                 .withSelectedDate(new Date());
  
 ```
-
+ * There are other Selection modes also SINGLE and MULTIPLE
  * Adding Deactivated Dates
   User wont able to select these dates thwy will be deactivated.
   for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color.
