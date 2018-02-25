@@ -163,7 +163,7 @@ public class CalendarPickerView extends ListView {
    * @param maxDate Latest selectable date, exclusive.  Must be later than {@code minDate}.
    */
   @TargetApi(Build.VERSION_CODES.GINGERBREAD)
-  public FluentInitializer init(Date minDate, Date maxDate, TimeZone timeZone, Locale locale) {
+  public FluentInitializer init(Date minDate, Date maxDate, TimeZone timeZone, Locale locale, DateFormat monthNameFormat) {
     if (minDate == null || maxDate == null) {
       throw new IllegalArgumentException(
           "minDate and maxDate must be non-null.  " + dbg(minDate, maxDate));
@@ -186,8 +186,7 @@ public class CalendarPickerView extends ListView {
     minCal = Calendar.getInstance(timeZone, locale);
     maxCal = Calendar.getInstance(timeZone, locale);
     monthCounter = Calendar.getInstance(timeZone, locale);
-    monthNameFormat =
-        new SimpleDateFormat("MMMM", locale);
+    this.monthNameFormat = monthNameFormat;
     monthNameFormat.setTimeZone(timeZone);
     weekdayNameFormat =
         new SimpleDateFormat("E", locale);
@@ -238,17 +237,21 @@ public class CalendarPickerView extends ListView {
 
 
   public FluentInitializer init(Date minDate, Date maxDate) {
-    return init(minDate, maxDate, TimeZone.getDefault(), Locale.getDefault());
+    return init(minDate, maxDate, TimeZone.getDefault(), Locale.getDefault(), new SimpleDateFormat("MMMM", Locale.getDefault()));
   }
 
 
   public FluentInitializer init(Date minDate, Date maxDate, TimeZone timeZone) {
-    return init(minDate, maxDate, timeZone, Locale.getDefault());
+    return init(minDate, maxDate, timeZone, Locale.getDefault(), new SimpleDateFormat("MMMM", Locale.getDefault()));
+  }
+
+  public FluentInitializer init(Date minDate, Date maxDate, DateFormat monthNameFormat) {
+    return init(minDate, maxDate, TimeZone.getDefault(), Locale.getDefault(), monthNameFormat);
   }
 
 
   public FluentInitializer init(Date minDate, Date maxDate, Locale locale) {
-    return init(minDate, maxDate, TimeZone.getDefault(), locale);
+    return init(minDate, maxDate, TimeZone.getDefault(), locale, new SimpleDateFormat("MMMM", locale));
   }
 
   public class FluentInitializer {
@@ -288,15 +291,6 @@ public class CalendarPickerView extends ListView {
       return this;
     }
 
-    public FluentInitializer showYearInMonthHeader(Boolean flag){
-      if(flag){
-        monthNameFormat = monthNameFormat =
-                new SimpleDateFormat("MMMM, YYYY", locale);
-        monthNameFormat.setTimeZone(timeZone);
-        validateAndUpdate();
-      }
-      return this;
-    }
 
     public FluentInitializer withHighlightedDate(Date date) {
       return withHighlightedDates(Collections.singletonList(date));
