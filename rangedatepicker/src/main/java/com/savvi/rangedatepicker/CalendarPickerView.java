@@ -461,7 +461,8 @@ public class CalendarPickerView extends ListView {
   public List<Date> getSelectedDates() {
     List<Date> selectedDates = new ArrayList<>();
     for (MonthCellDescriptor cal : selectedCells) {
-      selectedDates.add(cal.getDate());
+      if(!highlightedCells.contains(cal))
+        selectedDates.add(cal.getDate());
     }
     Collections.sort(selectedDates);
     return selectedDates;
@@ -610,7 +611,7 @@ public class CalendarPickerView extends ListView {
                   singleCell.setSelected(false);
                   singleCell.setUnavailable(true);
                   singleCell.setHighlighted(false);
-                  //selectedCells.add(singleCell);
+                  selectedCells.add(singleCell);
                 }else if(!deactivatedDates.contains(singleCell.getDate().getDay()+1)){
                   singleCell.setSelected(true);
                   singleCell.setRangeState(RangeState.MIDDLE);
