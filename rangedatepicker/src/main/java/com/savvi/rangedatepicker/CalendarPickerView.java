@@ -616,8 +616,8 @@ public class CalendarPickerView extends ListView {
                   singleCell.setSelected(false);
                   singleCell.setUnavailable(true);
                   singleCell.setHighlighted(false);
-                  selectedCells.add(singleCell);
-                }else {
+                  //selectedCells.add(singleCell);
+                }else if(!deactivatedDates.contains(singleCell.getDate().getDay()+1)){
                   singleCell.setSelected(true);
                   singleCell.setRangeState(RangeState.MIDDLE);
                   selectedCells.add(singleCell);
