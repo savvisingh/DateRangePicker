@@ -34,14 +34,18 @@ Usage
 ```java
 calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 
-        calendar.init(lastYear.getTime(), nextYear.getTime()) //
+        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
-                .withSelectedDate(new Date());
+                .withSelectedDate(new Date())
+// deactivates given dates, non selectable
+                .withDeactivateDates(list)
+// highlight dates in red color, mean they are aleady used.
+                .withHighlightedDates(arrayList);
  
 ```
  * There are other Selection modes also SINGLE and MULTIPLE
  * Adding Deactivated Dates
-  User wont able to select these dates thwy will be deactivated.
+  User wont able to select these dates they will be deactivated.
   for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color.
   
   **This is required**
@@ -58,8 +62,6 @@ calendar.deactivateDates(list);
  * Getting Selected Dates
 You can get selected dates with the below function call when your user click finish or next button (which will you implement).
 
-**Don't forget to exclude Unavailable dates from the selected dates, its a bug so I will soon fix it.**
-
 ```java
 
 calendar.getSelectedDates()
@@ -75,7 +77,7 @@ declare it into your pom.xml
 <dependency>
   <groupId>com.savvi.datepicker</groupId>
   <artifactId>rangepicker</artifactId>
-  <version>1.0.1</version>
+  <version>1.2.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -83,7 +85,7 @@ or into your build.gradle
 
 ```groovy
 dependencies {
-    compile 'com.savvi.datepicker:rangepicker:1.0.1'
+    compile 'com.savvi.datepicker:rangepicker:1.2.0'
 }
 ```
 
