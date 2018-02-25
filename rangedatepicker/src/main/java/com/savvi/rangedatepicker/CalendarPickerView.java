@@ -66,7 +66,7 @@ public class CalendarPickerView extends ListView {
   final List<MonthCellDescriptor> highlightedCells = new ArrayList<>();
   final List<Calendar> selectedCals = new ArrayList<>();
   final List<Calendar> highlightedCals = new ArrayList<>();
-  ArrayList<Integer> deactivatedDates ;
+  ArrayList<Integer> deactivatedDates = new ArrayList<>() ;
   private Locale locale;
   private TimeZone timeZone;
   private DateFormat monthNameFormat;
