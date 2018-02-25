@@ -135,16 +135,6 @@ public class CalendarPickerView extends ListView {
     setCacheColorHint(bg);
     timeZone = TimeZone.getDefault();
     locale = Locale.getDefault();
-    today = Calendar.getInstance(timeZone, locale);
-    minCal = Calendar.getInstance(timeZone, locale);
-    maxCal = Calendar.getInstance(timeZone, locale);
-    monthCounter = Calendar.getInstance(timeZone, locale);
-    monthNameFormat = new SimpleDateFormat("LLLL", locale);
-    monthNameFormat.setTimeZone(timeZone);
-    weekdayNameFormat = new SimpleDateFormat("E", locale);
-    weekdayNameFormat.setTimeZone(timeZone);
-    fullDateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM, locale);
-    fullDateFormat.setTimeZone(timeZone);
 
     if (isInEditMode()) {
       Calendar nextYear = Calendar.getInstance(timeZone, locale);
@@ -197,11 +187,8 @@ public class CalendarPickerView extends ListView {
     maxCal = Calendar.getInstance(timeZone, locale);
     monthCounter = Calendar.getInstance(timeZone, locale);
     monthNameFormat =
-        new SimpleDateFormat("LLLL", locale);
+        new SimpleDateFormat("MMMM", locale);
     monthNameFormat.setTimeZone(timeZone);
-    for (MonthDescriptor month : months) {
-      month.setLabel(monthNameFormat.format(month.getDate()));
-    }
     weekdayNameFormat =
         new SimpleDateFormat("E", locale);
     weekdayNameFormat.setTimeZone(timeZone);
@@ -301,6 +288,16 @@ public class CalendarPickerView extends ListView {
       return this;
     }
 
+    public FluentInitializer showYearInMonthHeader(Boolean flag){
+      if(flag){
+        monthNameFormat = monthNameFormat =
+                new SimpleDateFormat("MMMM, YYYY", locale);
+        monthNameFormat.setTimeZone(timeZone);
+        validateAndUpdate();
+      }
+      return this;
+    }
+
     public FluentInitializer withHighlightedDate(Date date) {
       return withHighlightedDates(Collections.singletonList(date));
     }
@@ -321,6 +318,11 @@ public class CalendarPickerView extends ListView {
 
     public FluentInitializer withMonthsReverseOrder(boolean monthsRevOrder) {
       monthsReverseOrder = monthsRevOrder;
+      return this;
+    }
+
+    public FluentInitializer withDeactivateDates(ArrayList<Integer> deactivateDates){
+      deactivateDates(deactivateDates);
       return this;
     }
   }
@@ -785,6 +787,7 @@ public class CalendarPickerView extends ListView {
     }
 
     @Override public View getView(int position, View convertView, ViewGroup parent) {
+      //Logr.d("Adaper Position ==>" + position);
       MonthView monthView = (MonthView) convertView;
       if (monthView == null //
           || !monthView.getTag(R.id.day_view_adapter_class).equals(dayViewAdapter.getClass())) {
