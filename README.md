@@ -34,8 +34,8 @@ Usage
 ```java
 calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 
-        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
-                .inMode(CalendarPickerView.SelectionMode.RANGE) //
+        calendar.init(lastYear.getTime(), nextYear.getTime()) //
+                .inMode(CalendarPickerView.SelectionMode.RANGE)
                 .withSelectedDate(new Date())
 // deactivates given dates, non selectable
                 .withDeactivateDates(list)
@@ -46,16 +46,14 @@ calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
  * There are other Selection modes also SINGLE and MULTIPLE
  * Adding Deactivated Dates
   User wont able to select these dates they will be deactivated.
-  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color.
+  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated in that case the date text color wil be grey..
   
-  **This is required**
+ * You can aslo specify the month header by passing SimpleDateFormat object in constructor
+   For eg. if we want to display year
 
 ```java
-ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(7);
-        
-calendar.deactivateDates(list);
+
+calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault()));
 
  ``` 
  
