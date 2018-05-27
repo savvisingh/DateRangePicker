@@ -451,7 +451,7 @@ public class CalendarPickerView extends ListView {
       throw new IllegalStateException(
           "Must have at least one month to display.  Did you forget to call init()?");
     }
-    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST));
   }
 
   public Date getSelectedDate() {
