@@ -592,7 +592,7 @@ public class CalendarPickerView extends ListView {
           else if (date.after(selectedCals.get(0).getTime()) && date.before(selectedCals.get(1).getTime())) {
             long distanceToStart = date.getTime() - selectedCals.get(0).getTimeInMillis();
             long distanceFromEnd = selectedCals.get(1).getTimeInMillis() - date.getTime();
-            if (distanceFromEnd >= distanceToStart) {
+            if (distanceFromEnd > distanceToStart) {
               selectedCals.set(0, newlySelectedCal);
               List<MonthCellDescriptor> cells = new ArrayList<>();
               for (MonthCellDescriptor selectedCell : selectedCells) {
