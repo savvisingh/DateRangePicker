@@ -579,13 +579,20 @@ public class CalendarPickerView extends ListView {
 
     if (date != null) {
       if (selectionMode == SelectionMode.RANGE) {
+        cell.setSelected(true);
         boolean newRange = false;
         if (selectedCals.size() > 1) {
           if (date.before(selectedCals.get(0).getTime())) {
+            if (dateListener != null) {
+              dateListener.onDateUnselected(selectedCals.get(0).getTime());
+            }
             selectedCals.set(0, newlySelectedCal);
             newRange = true;
           }
           else if (date.after(selectedCals.get(1).getTime())) {
+            if (dateListener != null) {
+              dateListener.onDateUnselected(selectedCals.get(1).getTime());
+            }
             selectedCals.set(1, newlySelectedCal);
             newRange = true;
           }
@@ -615,7 +622,22 @@ public class CalendarPickerView extends ListView {
             newRange = true;
           }
           else if (date.equals(selectedCals.get(0).getTime()) || date.equals(selectedCals.get(1).getTime())) {
-            clearOldSelections();
+            for (Calendar calendar : selectedCals) {
+              if (date.equals(calendar.getTime())) {
+                continue;
+              }
+              if (dateListener != null) {
+                dateListener.onDateUnselected(calendar.getTime());
+              }
+            }
+            List<MonthCellDescriptor> cells = new ArrayList<>();
+            for (MonthCellDescriptor selectedCell : selectedCells) {
+              if (date.equals(selectedCell.getDate())) {
+                continue;
+              }
+              cells.add(selectedCell);
+            }
+            clearSelections(cells, true);
             selectedCals.add(newlySelectedCal);
           }
         } else if (selectedCals.size() == 1) {
