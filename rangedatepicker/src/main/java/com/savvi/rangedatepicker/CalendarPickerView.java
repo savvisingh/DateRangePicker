@@ -451,7 +451,7 @@ public class CalendarPickerView extends ListView {
       throw new IllegalStateException(
           "Must have at least one month to display.  Did you forget to call init()?");
     }
-    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST));
   }
 
   public Date getSelectedDate() {
@@ -563,13 +563,6 @@ public class CalendarPickerView extends ListView {
 
     switch (selectionMode) {
       case RANGE:
-        if (selectedCals.size() > 1) {
-          // We've already got a range selected: clear the old one.
-          clearOldSelections();
-        } else if (selectedCals.size() == 1 && newlySelectedCal.before(selectedCals.get(0))) {
-          // We're moving the start of the range back in time: clear the old start date.
-          clearOldSelections();
-        }
         break;
 
       case MULTIPLE:
@@ -584,12 +577,104 @@ public class CalendarPickerView extends ListView {
     }
 
     if (date != null) {
+      if (selectionMode == SelectionMode.RANGE) {
+        cell.setSelected(true);
+        boolean newRange = false;
+        if (selectedCals.size() > 1) {
+          if (date.before(selectedCals.get(0).getTime())) {
+            if (dateListener != null) {
+              dateListener.onDateUnselected(selectedCals.get(0).getTime());
+            }
+            selectedCals.set(0, newlySelectedCal);
+            newRange = true;
+          }
+          else if (date.after(selectedCals.get(1).getTime())) {
+            if (dateListener != null) {
+              dateListener.onDateUnselected(selectedCals.get(1).getTime());
+            }
+            selectedCals.set(1, newlySelectedCal);
+            newRange = true;
+          }
+          else if (date.after(selectedCals.get(0).getTime()) && date.before(selectedCals.get(1).getTime())) {
+            long distanceToStart = date.getTime() - selectedCals.get(0).getTimeInMillis();
+            long distanceFromEnd = selectedCals.get(1).getTimeInMillis() - date.getTime();
+            if (distanceFromEnd > distanceToStart) {
+              selectedCals.set(0, newlySelectedCal);
+              List<MonthCellDescriptor> cells = new ArrayList<>();
+              for (MonthCellDescriptor selectedCell : selectedCells) {
+                if (selectedCell.getDate().before(date)) {
+                  cells.add(selectedCell);
+                }
+              }
+              clearSelections(cells, false);
+            }
+            else {
+              selectedCals.set(1, newlySelectedCal);
+              List<MonthCellDescriptor> cells = new ArrayList<>();
+              for (MonthCellDescriptor selectedCell : selectedCells) {
+                if (selectedCell.getDate().after(date)) {
+                  cells.add(selectedCell);
+                }
+              }
+              clearSelections(cells, false);
+            }
+            newRange = true;
+          }
+          else if (date.equals(selectedCals.get(0).getTime()) || date.equals(selectedCals.get(1).getTime())) {
+            for (Calendar calendar : selectedCals) {
+              if (date.equals(calendar.getTime())) {
+                continue;
+              }
+              if (dateListener != null) {
+                dateListener.onDateUnselected(calendar.getTime());
+              }
+            }
+            List<MonthCellDescriptor> cells = new ArrayList<>();
+            for (MonthCellDescriptor selectedCell : selectedCells) {
+              if (date.equals(selectedCell.getDate())) {
+                continue;
+              }
+              cells.add(selectedCell);
+            }
+            clearSelections(cells, true);
+            selectedCals.add(newlySelectedCal);
+          }
+        } else if (selectedCals.size() == 1) {
+          if (newlySelectedCal.before(selectedCals.get(0))) {
+            selectedCals.add(0, newlySelectedCal);
+            newRange = true;
+          }
+          else if (newlySelectedCal.after(selectedCals.get(0))) {
+            selectedCals.add(newlySelectedCal);
+            newRange = true;
+          }
+        } else {
+          selectedCals.add(newlySelectedCal);
+        }
+
+        if (newRange) {
+          selectedCells.clear();
+          MonthCellWithMonthIndex start = getMonthCellWithIndexByDate(selectedCals.get(0).getTime());
+          if (start == null) {
+            throw new IllegalStateException("legal selectedCals.get(0).getTime(): " + fullDateFormat.format(selectedCals.get(0).getTime()) + " without existing corresponding cell");
+          }
+          selectedCells.add(start.cell);
+          MonthCellWithMonthIndex end = getMonthCellWithIndexByDate(selectedCals.get(1).getTime());
+          if (end == null) {
+            throw new IllegalStateException("legal date: " + fullDateFormat.format(selectedCals.get(1).getTime()) + " without existing corresponding cell");
+          }
+          selectedCells.add(end.cell);
+        }
+      }
+      else {
+        selectedCals.add(newlySelectedCal);
+      }
+
       // Select a new cell.
       if (selectedCells.size() == 0 || !selectedCells.get(0).equals(cell)) {
         selectedCells.add(cell);
         cell.setSelected(true);
       }
-      selectedCals.add(newlySelectedCal);
 
       if (selectionMode == SelectionMode.RANGE && selectedCells.size() > 1) {
         // Select all days in between start and end.
@@ -639,6 +724,16 @@ public class CalendarPickerView extends ListView {
   }
 
   private void clearOldSelections() {
+    clearSelections(this.selectedCells, true);
+  }
+
+  /**
+   * clear cell select state
+   * you need to call {@link #validateAndUpdate()} to update the user interface
+   * @param selectedCells the cells to be cleared
+   * @param expand if true, the view will be reset, otherwise, only clear the given cells's state
+   */
+  private void clearSelections(List<MonthCellDescriptor> selectedCells, boolean expand) {
     for (MonthCellDescriptor selectedCell : selectedCells) {
       // De-select the currently-selected cell.
       selectedCell.setSelected(false);
@@ -651,17 +746,19 @@ public class CalendarPickerView extends ListView {
         Date selectedDate = selectedCell.getDate();
 
         if (selectionMode == SelectionMode.RANGE) {
-          int index = selectedCells.indexOf(selectedCell);
-          if (index == 0 || index == selectedCells.size() - 1) {
+          if (selectedCell.getRangeState() == RangeState.FIRST || selectedCell.getRangeState() == RangeState.LAST) {
             dateListener.onDateUnselected(selectedDate);
           }
+          selectedCell.setRangeState(RangeState.NONE);
         } else {
           dateListener.onDateUnselected(selectedDate);
         }
       }
     }
-    selectedCells.clear();
-    selectedCals.clear();
+    if (expand) {
+      this.selectedCells.clear();
+      this.selectedCals.clear();
+    }
   }
 
   private Date applyMultiSelect(Date date, Calendar selectedCal) {
