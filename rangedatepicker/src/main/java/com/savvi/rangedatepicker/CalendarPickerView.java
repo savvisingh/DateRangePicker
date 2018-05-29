@@ -451,6 +451,11 @@ public class CalendarPickerView extends ListView {
       throw new IllegalStateException(
           "Must have at least one month to display.  Did you forget to call init()?");
     }
+    int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+    if (heightMode == MeasureSpec.EXACTLY || heightMode == MeasureSpec.AT_MOST) {
+      super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+      return;
+    }
     super.onMeasure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(Integer.MAX_VALUE >> 2, MeasureSpec.AT_MOST));
   }
 
@@ -671,10 +676,10 @@ public class CalendarPickerView extends ListView {
       }
 
       // Select a new cell.
-      if (selectedCells.size() == 0 || !selectedCells.get(0).equals(cell)) {
-        selectedCells.add(cell);
-        cell.setSelected(true);
+      if (!selectedCells.contains(cell)) {
+        selectedCells.remove(cell);
       }
+      cell.setSelected(true);
 
       if (selectionMode == SelectionMode.RANGE && selectedCells.size() > 1) {
         // Select all days in between start and end.
