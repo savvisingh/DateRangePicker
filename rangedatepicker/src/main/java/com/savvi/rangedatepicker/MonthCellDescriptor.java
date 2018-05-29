@@ -94,6 +94,14 @@ class MonthCellDescriptor {
     isUnavailable = unavailable;
   }
 
+  @Override
+  public boolean equals(Object obj) {
+    if (super.equals(obj)) {
+      return true;
+    }
+    return obj instanceof MonthCellDescriptor && date.equals(((MonthCellDescriptor) obj).getDate());
+  }
+
   @Override public String toString() {
     return "MonthCellDescriptor{"
         + "date="

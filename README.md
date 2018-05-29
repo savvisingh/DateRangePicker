@@ -1,8 +1,8 @@
 Date Range Picker 
 ===================
-Date Range Picker is a Calender Picker View to show a Customized Date Range Picker with improved UI
+Date Range Picker is a Calendar Picker View to show a Customized Date Range Picker with improved UI
 
-[ ![Download](https://api.bintray.com/packages/savvisingh/maven/RangeDatePicker/images/download.svg) ](https://bintray.com/savvisingh/maven/RangeDatePicker/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/savvisingh/maven/date-range-picker/images/download.svg) ](https://bintray.com/savvisingh/maven/date-range-picker/_latestVersion)
 
 Screenshots
 -----------
@@ -13,7 +13,7 @@ Usage
 * 1. Add Calendar Picker View to XML
 
 ```xml
-<com.savvi.rangepicker.CalendarPickerView
+<com.savvi.rangedatepicker.CalendarPickerView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendar_view"
@@ -30,42 +30,35 @@ Usage
  ```
  
 * 2. Initialize it in Java Class
-
+      
 ```java
 calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 
         calendar.init(lastYear.getTime(), nextYear.getTime()) //
-                .inMode(CalendarPickerView.SelectionMode.RANGE) //
-                .withSelectedDate(new Date());
+                .inMode(CalendarPickerView.SelectionMode.RANGE)
+                .withSelectedDate(new Date())
+// deactivates given dates, non selectable
+                .withDeactivateDates(list)
+// highlight dates in red color, mean they are aleady used.
+                .withHighlightedDates(arrayList);
  
 ```
-
-* Adding Unavailable Dates
-  These dates will be shown in Red color and marked unavailable
-
-```java
-ArrayList<Date> arrayList = new ArrayList<>();
-//add dates which you want to unavailable
-calendar.makeUnavailable(arrayList);
-
- ``` 
- 
+ * There are other Selection modes also SINGLE and MULTIPLE
  * Adding Deactivated Dates
-  User wont able to select these dates thwy will be deactivated.
-  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated with grey color
+  User wont able to select these dates they will be deactivated.
+  for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated in that case the date text color wil be grey..
+  
+ * You can aslo specify the month header by passing SimpleDateFormat object in constructor
+   For eg. if we want to display year
 
 ```java
-ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(7);
-        
-calendar.deactivateDates(list);
+
+calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault()));
 
  ``` 
  
  * Getting Selected Dates
-You can get selected dates with the below function call when your user click finish or next button(which will you implement)
-Dont forget to exclude Unavailable dates from the selected dates, its a bug so I will soon fix it.
+You can get selected dates with the below function call when your user click finish or next button (which will you implement).
 
 ```java
 
@@ -80,9 +73,9 @@ declare it into your pom.xml
 
 ```xml
 <dependency>
-  <groupId>com.savvi.rangepicker</groupId>
+  <groupId>com.savvi.datepicker</groupId>
   <artifactId>rangepicker</artifactId>
-  <version>1.0.1</version>
+  <version>1.2.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -90,6 +83,23 @@ or into your build.gradle
 
 ```groovy
 dependencies {
-    compile 'com.savvi.rangepicker:rangepicker:1.0.1'
+    compile 'com.savvi.datepicker:rangepicker:1.2.0'
 }
 ```
+
+ License
+---------
+
+    Copyright 2017 Sarabjeet Singh
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.

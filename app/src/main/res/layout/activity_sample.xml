@@ -6,19 +6,27 @@
     android:layout_height="match_parent"
     tools:context="com.savvi.rangepickersample.SampleActivity">
 
-    <com.savvi.rangepicker.CalendarPickerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <com.savvi.rangedatepicker.CalendarPickerView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
-        android:paddingBottom="16dp"
         android:scrollbarStyle="outsideOverlay"
-        android:clipToPadding="false"
         app:tsquare_dividerColor="@color/transparent"
         app:tsquare_headerTextColor="@color/custom_header_text"
-        />
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/get_selected_dates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected Dates"
+        tools:layout_editor_absoluteX="229dp"
+        tools:layout_editor_absoluteY="447dp" />
 
 </android.support.constraint.ConstraintLayout>
