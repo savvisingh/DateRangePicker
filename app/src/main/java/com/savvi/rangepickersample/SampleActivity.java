@@ -1,23 +1,22 @@
 package com.savvi.rangepickersample;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.savvi.rangedatepicker.*;
+import com.savvi.rangedatepicker.CalendarPickerView;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 import java.util.Locale;
 
-public class SampleActivity extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
 
+public class SampleActivity extends AppCompatActivity {
 
     CalendarPickerView calendar;
     Button button;
@@ -31,10 +30,10 @@ public class SampleActivity extends AppCompatActivity {
         nextYear.add(Calendar.YEAR, 10);
 
         final Calendar lastYear = Calendar.getInstance();
-        lastYear.add(Calendar.YEAR, -10);
+        lastYear.add(Calendar.YEAR, - 10);
 
-        calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
-        button = (Button) findViewById(R.id.get_selected_dates);
+        calendar = findViewById(R.id.calendar_view);
+        button = findViewById(R.id.get_selected_dates);
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
 
@@ -51,20 +50,18 @@ public class SampleActivity extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
-                .inMode(CalendarPickerView.SelectionMode.RANGE) //
-                .withSelectedDate(new Date())
-                .withDeactivateDates(list)
-                .withHighlightedDates(arrayList);
 
+        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault()))
+            .inMode(CalendarPickerView.SelectionMode.RANGE)
+            .withSelectedDate(new Date())
+            .withDeactivateDates(list)
+            .withHighlightedDates(arrayList);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("list",  calendar.getSelectedDates().toString());
+                Log.d("list", calendar.getSelectedDates().toString());
             }
         });
-
-
     }
 }
