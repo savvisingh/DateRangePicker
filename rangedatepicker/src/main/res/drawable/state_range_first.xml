@@ -6,8 +6,12 @@
         android:tint="@color/calendar_selected_range_bg">
     <path
         android:fillColor="#000"
-        android:pathData="M24,8h24v32h-24z"/>
+        android:pathData="M24,8h24v32h-24z"
+        android:strokeColor="#000"
+        android:strokeWidth="1"/>
     <path
         android:fillColor="#000"
-        android:pathData="M 24,8 C 0,8 0,40 24,40z "/>
+        android:pathData="M 24,8 C 0,8 0,40 24,40z "
+        android:strokeColor="#000"
+        android:strokeWidth="1"/>
 </vector>
