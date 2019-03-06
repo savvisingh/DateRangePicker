@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/DateRangePicker.iml" filepath="$PROJECT_DIR$/DateRangePicker.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/rangedatepicker/rangedatepicker.iml" filepath="$PROJECT_DIR$/rangedatepicker/rangedatepicker.iml" />
-      <module fileurl="file://$PROJECT_DIR$/rangepicker/rangepicker.iml" filepath="$PROJECT_DIR$/rangepicker/rangepicker.iml" />
     </modules>
   </component>
 </project>

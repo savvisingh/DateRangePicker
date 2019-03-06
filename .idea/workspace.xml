@@ -11,20 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3053627-55ef-42a2-9a94-f328786166f0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.1/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_bg_selector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_bg_selector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +55,7 @@
     <session id="-263338632">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="2" />
@@ -89,14 +77,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="49" />
+          <entry key="java" value="51" />
           <entry key="li" value="1" />
           <entry key="xml" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="49" />
+          <entry key="JAVA" value="51" />
           <entry key="Layout Inspector" value="1" />
           <entry key="XML" value="17" />
         </counts>
@@ -111,35 +99,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="78" column="49" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+            <state relative-caret-position="96">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="e#2127#2375#0" expanded="true" />
+                <element signature="e#2374#2375#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarGridView.java">
+        <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarPickerView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-311">
-              <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_bg_selector.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            <state relative-caret-position="46">
+              <caret line="330" column="46" selection-start-line="330" selection-start-column="33" selection-end-line="330" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -3103,7 +3077,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1418" />
+    <option name="x" value="52" />
     <option name="y" value="-11" />
     <option name="width" value="1315" />
     <option name="height" value="780" />
@@ -3180,14 +3154,6 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
               <item name="savvi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="DateRangePicker" type="1abcf292:AndroidViewProjectNode" />
-              <item name="rangedatepicker" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="com" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="savvi" type="462c0819:PsiDirectoryNode" />
-              <item name="rangedatepicker" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="DateRangePicker" type="1abcf292:AndroidViewProjectNode" />
@@ -3497,10 +3463,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1418" y="-11" width="1315" height="780" extended-state="6" />
+    <frame x="52" y="-11" width="1315" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23914759" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.23914759" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" side_tool="true" />
@@ -3529,7 +3495,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="right" id="Preview" order="4" weight="0.5153907" />
-      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" order="5" side_tool="true" weight="0.32991317" />
       <window_info anchor="right" id="Gradle" order="6" weight="0.16574585" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -3788,16 +3754,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarPickerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="260" column="105" selection-start-line="260" selection-start-column="105" selection-end-line="260" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_text_selector.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/day_text_color.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -3829,10 +3785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml">
+    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarGridView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        <state relative-caret-position="-311">
+          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -3843,17 +3799,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarGridView.java">
+    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/state_range_last.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-311">
-          <caret line="96" column="34" selection-start-line="96" selection-start-column="34" selection-end-line="96" selection-end-column="34" />
+        <state relative-caret-position="128">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/res/drawable/calendar_text_selector.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/rangedatepicker/src/main/java/com/savvi/rangedatepicker/CalendarPickerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="330" column="46" selection-start-line="330" selection-start-column="33" selection-end-line="330" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/savvi/rangepickersample/SampleActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="78" column="49" selection-start-line="78" selection-start-column="49" selection-end-line="78" selection-end-column="49" />
+        <state relative-caret-position="96">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#2127#2375#0" expanded="true" />
+            <element signature="e#2374#2375#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
