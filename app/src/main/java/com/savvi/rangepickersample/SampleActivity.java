@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.savvi.rangedatepicker.*;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -54,11 +55,11 @@ public class SampleActivity extends AppCompatActivity {
         }
 
 
-
         calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
                 .withSelectedDate(new Date())
                 .withDeactivateDates(list)
+                .withSubTitles(getSubTitles())
                 .withHighlightedDates(arrayList);
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -69,5 +70,11 @@ public class SampleActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private ArrayList<SubTitle> getSubTitles() {
+        final ArrayList<SubTitle> subTitles = new ArrayList<>();
+        subTitles.add(new SubTitle(new Date(), "₹ 1000"));
+        return subTitles;
     }
 }

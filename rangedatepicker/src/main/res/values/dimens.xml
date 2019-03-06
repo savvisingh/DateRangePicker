@@ -5,4 +5,5 @@
   <dimen name="calendar_text_medium">16sp</dimen>
   <dimen name="calendar_text_large">18sp</dimen>
   <dimen name="calendar_text_small">12sp</dimen>
+  <dimen name="calendar_text_tiny">8sp</dimen>
 </resources>
