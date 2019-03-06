@@ -4,9 +4,7 @@ package com.savvi.rangedatepicker;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class CalendarCellView extends FrameLayout {
