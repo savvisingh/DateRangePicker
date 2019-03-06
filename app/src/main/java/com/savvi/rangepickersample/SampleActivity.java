@@ -74,7 +74,9 @@ public class SampleActivity extends AppCompatActivity {
 
     private ArrayList<SubTitle> getSubTitles() {
         final ArrayList<SubTitle> subTitles = new ArrayList<>();
-        subTitles.add(new SubTitle(new Date(), "₹ 1000"));
+        final Calendar tmrw = Calendar.getInstance();
+        tmrw.add(Calendar.DAY_OF_MONTH, 1);
+        subTitles.add(new SubTitle(tmrw.getTime(), "₹1000"));
         return subTitles;
     }
 }
