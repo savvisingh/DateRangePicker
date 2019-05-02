@@ -41,8 +41,8 @@ public class SampleActivity extends AppCompatActivity {
         ArrayList<Date> arrayList = new ArrayList<>();
         try {
             SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
-            String strdate = "22-2-2018";
-            String strdate2 = "26-2-2018";
+            String strdate = "22-4-2019";
+            String strdate2 = "26-4-2019";
             Date newdate = dateformat.parse(strdate);
             Date newdate2 = dateformat.parse(strdate2);
             arrayList.add(newdate);
