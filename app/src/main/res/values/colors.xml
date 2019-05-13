@@ -6,4 +6,8 @@
     <color name="transparent">#00000000</color>
     <color name="dividerColor">#e0e0e0</color>
     <color name="custom_header_text">#030303</color>
+
+    <color name="calendar_selected_day_bg">#ffcf40</color>
+    <color name="calendar_selected_range_bg">#ffcf40</color>
+    <color name="dateTimeRangePickerStateToday">#ffcf40</color>
 </resources>
