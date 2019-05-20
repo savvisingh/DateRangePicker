@@ -1,4 +1,3 @@
-// Copyright 2012 Square, Inc.
 package com.savvi.rangedatepicker;
 
 import android.content.Context;

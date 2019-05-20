@@ -1,5 +1,3 @@
-// Copyright 2013 Square, Inc.
-
 package com.savvi.rangedatepicker;
 
 import android.content.Context;
@@ -123,7 +121,7 @@ public class CalendarCellView extends FrameLayout {
 
     @Override
     protected int[] onCreateDrawableState(int extraSpace) {
-        final int[] drawableState = super.onCreateDrawableState(extraSpace + 5);
+        final int[] drawableState = super.onCreateDrawableState(extraSpace+5);
 
         if (isSelectable) {
             mergeDrawableStates(drawableState, STATE_SELECTABLE);

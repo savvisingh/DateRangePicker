@@ -1,14 +1,14 @@
-// Copyright 2012 Square, Inc.
 package com.savvi.rangedatepicker;
 
 import android.content.Context;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import java.text.DateFormat;
 import java.text.NumberFormat;

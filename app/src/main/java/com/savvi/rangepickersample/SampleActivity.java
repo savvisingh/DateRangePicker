@@ -1,14 +1,13 @@
 package com.savvi.rangepickersample;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.savvi.rangedatepicker.CalendarPickerView;
+import com.savvi.rangedatepicker.SubTitle;
 
-import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -57,10 +56,12 @@ public class SampleActivity extends AppCompatActivity {
 
         calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
-                .withSelectedDate(new Date())
                 .withDeactivateDates(list)
                 .withSubTitles(getSubTitles())
                 .withHighlightedDates(arrayList);
+
+        calendar.scrollToDate(new Date());
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
