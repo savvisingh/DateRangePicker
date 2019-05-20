@@ -4,9 +4,11 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.savvi.rangedatepicker.CalendarPickerView;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -35,14 +37,16 @@ public class SampleActivity extends AppCompatActivity {
         calendar = findViewById(R.id.calendar_view);
         button = findViewById(R.id.get_selected_dates);
         ArrayList<Integer> list = new ArrayList<>();
-        list.add(1);
+        list.add(2);
 
         calendar.deactivateDates(list);
         ArrayList<Date> arrayList = new ArrayList<>();
         try {
             SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
+
             String strdate = "22-4-2019";
             String strdate2 = "26-4-2019";
+          
             Date newdate = dateformat.parse(strdate);
             Date newdate2 = dateformat.parse(strdate2);
             arrayList.add(newdate);
@@ -51,17 +55,26 @@ public class SampleActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault()))
-            .inMode(CalendarPickerView.SelectionMode.RANGE)
-            .withSelectedDate(new Date())
-            .withDeactivateDates(list)
-            .withHighlightedDates(arrayList);
+        calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
+                .inMode(CalendarPickerView.SelectionMode.RANGE) //
+                .withSelectedDate(new Date())
+                .withDeactivateDates(list)
+                .withSubTitles(getSubTitles())
+                .withHighlightedDates(arrayList);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("list", calendar.getSelectedDates().toString());
+                Toast.makeText(SampleActivity.this, "list " + calendar.getSelectedDates().toString(), Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private ArrayList<SubTitle> getSubTitles() {
+        final ArrayList<SubTitle> subTitles = new ArrayList<>();
+        final Calendar tmrw = Calendar.getInstance();
+        tmrw.add(Calendar.DAY_OF_MONTH, 1);
+        subTitles.add(new SubTitle(tmrw.getTime(), "₹1000"));
+        return subTitles;
     }
 }
