@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:drawable="@drawable/state_range_middle" app:tsquare_state_range_middle="true"/>
+    <item android:drawable="@drawable/state_range_middle_deactivated" app:tsquare_state_range_middle="true"
+        app:tsquare_state_deactivated="true"/>
+    <item android:drawable="@drawable/state_range_middle" app:tsquare_state_range_middle="true"
+        app:tsquare_state_deactivated="false"/>
     <item android:drawable="@drawable/state_selected" android:state_selected="true" app:tsquare_state_range_first="false"
           app:tsquare_state_range_last="false" app:tsquare_state_highlighted="false"/>
     <item android:drawable="@drawable/state_range_first" app:tsquare_state_range_first="true"/>

@@ -150,7 +150,7 @@ public class MonthView extends LinearLayout {
                         cellView.setSelected(false);
                         cellView.setCurrentMonth(cell.isCurrentMonth());
                         cellView.setToday(cell.isToday());
-                        cellView.setRangeState(RangeState.NONE);
+                        cellView.setRangeState(cell.getRangeState());
                         cellView.setHighlighted(cell.isHighlighted());
                         cellView.setRangeUnavailable(cell.isUnavailable());
                         cellView.setDeactivated(true);

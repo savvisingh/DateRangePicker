@@ -1,4 +1,3 @@
-// Copyright 2012 Square, Inc.
 package com.savvi.rangedatepicker;
 
 import android.annotation.SuppressLint;
@@ -12,8 +11,12 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import java.text.DateFormat;
 import java.text.DateFormatSymbols;
@@ -38,7 +41,7 @@ import static java.util.Calendar.SECOND;
 import static java.util.Calendar.YEAR;
 
 
-public class CalendarPickerView extends ListView {
+public class CalendarPickerView extends RecyclerView {
     private ArrayList<SubTitle> subTitles;
 
     public enum SelectionMode {
@@ -62,6 +65,7 @@ public class CalendarPickerView extends ListView {
     }
 
     private final CalendarPickerView.MonthAdapter adapter;
+    private final RecyclerView.LayoutManager layoutManager;
     private final IndexedLinkedHashMap<String, List<List<MonthCellDescriptor>>> cells =
             new IndexedLinkedHashMap<>();
     final MonthView.Listener listener = new CellClickedListener();
@@ -87,6 +91,7 @@ public class CalendarPickerView extends ListView {
     private int dayTextColorResId;
     private int titleTextColor;
     private boolean displayHeader;
+    private boolean orientation;
     private int headerTextColor;
     private Typeface titleTypeface;
     private Typeface dateTypeface;
@@ -99,7 +104,7 @@ public class CalendarPickerView extends ListView {
     private List<CalendarCellDecorator> decorators;
     private DayViewAdapter dayViewAdapter = new DefaultDayViewAdapter();
 
-    private boolean monthsReverseOrder;
+    private boolean monthsReverseOrder = false;
 
     public void setDecorators(List<CalendarCellDecorator> decorators) {
         this.decorators = decorators;
@@ -130,13 +135,22 @@ public class CalendarPickerView extends ListView {
         displayHeader = a.getBoolean(R.styleable.CalendarPickerView_tsquare_displayHeader, true);
         headerTextColor = a.getColor(R.styleable.CalendarPickerView_tsquare_headerTextColor,
                 res.getColor(R.color.dateTimeRangePickerHeaderTextColor));
+        orientation = a.getBoolean(R.styleable.CalendarPickerView_tsquare_orientation_horizontal, false);
+
         a.recycle();
 
+
         adapter = new MonthAdapter();
-        setDivider(null);
-        setDividerHeight(0);
+        if(!orientation){
+            layoutManager = new LinearLayoutManager(getContext(), VERTICAL, monthsReverseOrder);
+        }else {
+            layoutManager = new LinearLayoutManager(getContext(), HORIZONTAL, monthsReverseOrder);
+            SnapHelper snapHelper = new LinearSnapHelper();
+            snapHelper.attachToRecyclerView(this);
+        }
+
+        setLayoutManager(layoutManager);
         setBackgroundColor(bg);
-        setCacheColorHint(bg);
         timeZone = TimeZone.getDefault();
         locale = Locale.getDefault();
 
@@ -357,7 +371,7 @@ public class CalendarPickerView extends ListView {
                 if (smoothScroll) {
                     smoothScrollToPosition(selectedIndex);
                 } else {
-                    setSelection(selectedIndex);
+                    scrollToPosition(selectedIndex);
                 }
             }
         });
@@ -480,7 +494,7 @@ public class CalendarPickerView extends ListView {
     public List<Date> getSelectedDates() {
         List<Date> selectedDates = new ArrayList<>();
         for (MonthCellDescriptor cal : selectedCells) {
-            if (!highlightedCells.contains(cal))
+            if (!highlightedCells.contains(cal) && !deactivatedDates.contains(cal.getDate().getDay() + 1))
                 selectedDates.add(cal.getDate());
         }
         Collections.sort(selectedDates);
@@ -638,6 +652,12 @@ public class CalendarPickerView extends ListView {
                                     selectedCells.add(singleCell);
                                 } else if (!deactivatedDates.contains(singleCell.getDate().getDay() + 1)) {
                                     singleCell.setSelected(true);
+                                    singleCell.setDeactivated(false);
+                                    singleCell.setRangeState(RangeState.MIDDLE);
+                                    selectedCells.add(singleCell);
+                                }else {
+                                    singleCell.setSelected(true);
+                                    singleCell.setDeactivated(true);
                                     singleCell.setRangeState(RangeState.MIDDLE);
                                     selectedCells.add(singleCell);
                                 }
@@ -787,28 +807,37 @@ public class CalendarPickerView extends ListView {
         return null;
     }
 
-    private class MonthAdapter extends BaseAdapter {
+    private class MonthAdapter extends RecyclerView.Adapter<MonthAdapter.MyHolder> {
         private final LayoutInflater inflater;
 
         private MonthAdapter() {
             inflater = LayoutInflater.from(getContext());
         }
 
+        @NonNull
         @Override
-        public boolean isEnabled(int position) {
-            // Disable selectability: each cell will handle that itself.
-            return false;
+        public MyHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            MonthView view = MonthView.create(parent, inflater, weekdayNameFormat, listener, today, dividerColor,
+                dayBackgroundResId, dayTextColorResId, titleTextColor, displayHeader,
+                headerTextColor, decorators, locale, dayViewAdapter);
+
+            view.setTag(R.id.day_view_adapter_class, dayViewAdapter.getClass());
+
+            return new MyHolder(view);
         }
 
         @Override
-        public int getCount() {
-            return months.size();
+        public void onBindViewHolder(@NonNull MyHolder holder, int position) {
+            MonthView view = (MonthView) holder.itemView;
+            view.setDecorators(decorators);
+            if (monthsReverseOrder) {
+                position = months.size() - position - 1;
+            }
+            view.init(months.get(position), cells.getValueAtIndex(position), displayOnly,
+                titleTypeface, dateTypeface, deactivatedDates, subTitles);
+
         }
 
-        @Override
-        public Object getItem(int position) {
-            return months.get(position);
-        }
 
         @Override
         public long getItemId(int position) {
@@ -816,25 +845,15 @@ public class CalendarPickerView extends ListView {
         }
 
         @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            //Logr.d("Adaper Position ==>" + position);
-            MonthView monthView = (MonthView) convertView;
-            if (monthView == null //
-                    || !monthView.getTag(R.id.day_view_adapter_class).equals(dayViewAdapter.getClass())) {
-                monthView =
-                        MonthView.create(parent, inflater, weekdayNameFormat, listener, today, dividerColor,
-                                dayBackgroundResId, dayTextColorResId, titleTextColor, displayHeader,
-                                headerTextColor, decorators, locale, dayViewAdapter);
-                monthView.setTag(R.id.day_view_adapter_class, dayViewAdapter.getClass());
-            } else {
-                monthView.setDecorators(decorators);
+        public int getItemCount() {
+            return months.size();
+        }
+
+        public class MyHolder extends ViewHolder {
+
+            public MyHolder(@NonNull View itemView) {
+                super(itemView);
             }
-            if (monthsReverseOrder) {
-                position = months.size() - position - 1;
-            }
-            monthView.init(months.get(position), cells.getValueAtIndex(position), displayOnly,
-                    titleTypeface, dateTypeface, deactivatedDates, subTitles);
-            return monthView;
         }
     }
 
