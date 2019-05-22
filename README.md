@@ -89,6 +89,8 @@ app:tsquare_orientation_horizontal="true"
     // this is for Deactivated dates
     <color name="calendar_range_middle_deactivated_bg">#673AB7</color>
 
+   For Changing the text colors please have a look at day_text_color.xml in rangepicker module and you can ovveride the resource colors to customize it
+
 
  Import DateRangePicker dependency
 ------------------------------------
