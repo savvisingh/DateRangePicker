@@ -1,6 +1,6 @@
 Date Range Picker 
 ===================
-Date Range Picker is a Calendar Picker View to show a Customized Date Range Picker with improved UI
+Date Range Picker is a Calendar Picker View to show a Customized Date Range Picker with improved UI and functionality to add subtitles to the dates
 
 [ ![Download](https://api.bintray.com/packages/savvisingh/maven/date-range-picker/images/download.svg?version=1.3) ](https://bintray.com/savvisingh/maven/date-range-picker/1.3/link)
 
