@@ -2,7 +2,7 @@ Date Range Picker
 ===================
 Date Range Picker is a Calendar Picker View to show a Customized Date Range Picker with improved UI
 
-[ ![Download](https://api.bintray.com/packages/savvisingh/maven/date-range-picker/images/download.svg) ](https://bintray.com/savvisingh/maven/date-range-picker/_latestVersion)
+[ ![Download](https://api.bintray.com/packages/savvisingh/maven/date-range-picker/images/download.svg?version=1.3) ](https://bintray.com/savvisingh/maven/date-range-picker/1.3/link)
 
 Screenshots
 -----------
@@ -19,11 +19,9 @@ Usage
         android:id="@+id/calendar_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
         android:scrollbarStyle="outsideOverlay"
         android:clipToPadding="false"
+        app:tsquare_orientation_horizontal="false"
         app:tsquare_dividerColor="@color/transparent"
         app:tsquare_headerTextColor="@color/custom_header_text"
         /> 
@@ -31,8 +29,7 @@ Usage
  
 * 2. Initialize it in Java Class
       
-```java
-calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
+```kotlin
 
         calendar.init(lastYear.getTime(), nextYear.getTime()) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE)
@@ -40,7 +37,10 @@ calendar = (CalendarPickerView) findViewById(R.id.calendar_view);
 // deactivates given dates, non selectable
                 .withDeactivateDates(list)
 // highlight dates in red color, mean they are aleady used.
-                .withHighlightedDates(arrayList);
+                .withHighlightedDates(arrayList)
+// add subtitles to the dates pass a arrayList of SubTitle objects with date and text
+                .withSubtitles(getSubtitle())
+                
  
 ```
  * There are other Selection modes also SINGLE and MULTIPLE
@@ -75,7 +75,7 @@ declare it into your pom.xml
 <dependency>
   <groupId>com.savvi.datepicker</groupId>
   <artifactId>rangepicker</artifactId>
-  <version>1.2.0</version>
+  <version>1.3.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -83,7 +83,7 @@ or into your build.gradle
 
 ```groovy
 dependencies {
-    compile 'com.savvi.datepicker:rangepicker:1.2.0'
+    compile 'com.savvi.datepicker:rangepicker:1.3.0'
 }
 ```
 
