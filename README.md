@@ -48,7 +48,7 @@ Usage
   User wont able to select these dates they will be deactivated.
   for eg, if you dont want to provide services on Saturday and Sunday you can mark them deactivated in that case the date text color wil be grey..
   
- * You can aslo specify the month header by passing SimpleDateFormat object in constructor
+ * You can aslo specify custom month header style by passing SimpleDateFormat object in constructor
    For eg. if we want to display year
 
 ```java
@@ -66,6 +66,14 @@ calendar.getSelectedDates()
 
  ``` 
  
+ * Specifying Horizontal Orientation
+You can change the orientation of the CalendarPickerView by declaring it in xml view
+
+```xml
+
+app:tsquare_orientation_horizontal="true"
+
+ ``` 
  Import DateRangePicker dependency
 ------------------------------------
 
