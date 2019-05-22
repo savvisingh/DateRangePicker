@@ -74,6 +74,22 @@ You can change the orientation of the CalendarPickerView by declaring it in xml 
 app:tsquare_orientation_horizontal="true"
 
  ``` 
+ 
+  * Changing the colors of different states
+  
+  Add this attr in your colors.xml file to override the default colors
+       
+    <color name="calendar_selected_day_bg">#E91E63</color>    
+    <color name="calendar_selected_range_bg">#8BC34A</color>
+    
+    //this is for HighLighted dates
+    <color name="calendar_unavailable_bg">#F44336</color>
+    <color name="calendar_range_middle_unavailable_bg">#F44336</color>
+    
+    // this is for Deactivated dates
+    <color name="calendar_range_middle_deactivated_bg">#673AB7</color>
+
+
  Import DateRangePicker dependency
 ------------------------------------
 
