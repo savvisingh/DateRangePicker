@@ -6,7 +6,7 @@ Date Range Picker is a Calendar Picker View to show a Customized Date Range Pick
 
 Screenshots
 -----------
-<img src="art/device-2019-05-22-131733.png" alt="alt text" width="250" height="500"> <img src="art/device-2019-05-22-131815.png" alt="alt text" width="250" height="500">
+<img src="art/device-2019-05-22-131733.png" alt="alt text" width="250" height="550"> <img src="art/device-2019-05-22-131815.png" alt="alt text" width="250" height="550">
 
 Usage
 -----
