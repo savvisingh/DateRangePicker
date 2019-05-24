@@ -96,6 +96,9 @@ public class CalendarPickerView extends RecyclerView {
     private Typeface titleTypeface;
     private Typeface dateTypeface;
 
+    // the max range size
+    private int maxRangeSize = Integer.MAX_VALUE;
+
     private OnDateSelectedListener dateListener;
     private DateSelectableFilter dateConfiguredListener;
     private OnInvalidDateSelectedListener invalidDateListener =
@@ -342,6 +345,16 @@ public class CalendarPickerView extends RecyclerView {
 
         public FluentInitializer withSubTitles(ArrayList<SubTitle> subTitles) {
             setSubTitles(subTitles);
+            return this;
+        }
+
+        /**
+         * set max range size
+         * @param size
+         * @return
+         */
+        public FluentInitializer withMaxRangeSize(int size) {
+            maxRangeSize = size;
             return this;
         }
     }
@@ -665,6 +678,10 @@ public class CalendarPickerView extends RecyclerView {
                             }
                         }
                     }
+                }
+
+                if (selectedCells.size() > maxRangeSize) {
+                    clearSelectedDates();
                 }
             }
         }

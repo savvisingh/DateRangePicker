@@ -56,6 +56,7 @@ public class SampleActivity extends AppCompatActivity {
 
         calendar.init(lastYear.getTime(), nextYear.getTime(), new SimpleDateFormat("MMMM, YYYY", Locale.getDefault())) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
+                .withMaxRangeSize(7)
                 .withDeactivateDates(list)
                 .withSubTitles(getSubTitles())
                 .withHighlightedDates(arrayList);
